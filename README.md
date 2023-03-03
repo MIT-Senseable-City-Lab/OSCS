@@ -1,1 +1,1 @@
-# OSCS
+Open-source City Scanner (Flarburn)
