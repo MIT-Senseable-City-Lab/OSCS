@@ -3,7 +3,7 @@
 This is the official repository for FLATBURN: an Open-Source City Scanner
 
 ### Flatburn Overview
-
+<img src="https://github.com/MIT-Senseable-City-Lab/OSCS/blob/main/flatburn-images/cover.jpeg" width="400px"><img src="https://github.com/MIT-Senseable-City-Lab/OSCS/blob/main/flatburn-images/Flatburn-design.png" width="300px">
 
 
 ## Build
