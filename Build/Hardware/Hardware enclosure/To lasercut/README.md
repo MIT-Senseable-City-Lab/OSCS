@@ -1,0 +1,1 @@
+Vector files for lasercutting of the enclosure 'base-plate' and 'in-between plate' (dimensions in mm), suggested material is acrylic with the relevant material thickness specified in the name (closest available metric values can also be substituted).  
