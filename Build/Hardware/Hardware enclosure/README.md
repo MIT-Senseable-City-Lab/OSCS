@@ -1,0 +1,1 @@
+Files for 3D printing, laser-cutting and the full CAD assembly are included here together with a bill of materials listing all the required components to build the mechanical enclosure for a Flatburn device.
