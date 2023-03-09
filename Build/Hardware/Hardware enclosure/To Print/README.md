@@ -1,1 +1,1 @@
-Exported `.stl` files for printing on a desktop 3D printer (e.g. Prusa i3 MK3, Ender 3, Ultimaker, etc). Use a slicer like Ultimaker's (Cura)[https://ultimaker.com/software/ultimaker-cura] to prepare the files for your 3D printer.
+Exported `.stl` files for printing on a desktop 3D printer (e.g. Prusa i3 MK3, Ender 3, Ultimaker, etc). Use a slicer like Ultimaker's [Cura](https://ultimaker.com/software/ultimaker-cura) to prepare the files for your 3D printer.
