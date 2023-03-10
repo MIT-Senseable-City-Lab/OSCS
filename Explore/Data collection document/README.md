@@ -17,4 +17,10 @@ Sensors used on the [City Scanner](https://ieeexplore.ieee.org/document/8361419)
 City Scanner is also IoT-enabled, where individual sensing units are mounted on top of urban fleets for data collection and stream data to cloud for storage, manipulation, and analysis via a cellular network. Jointly, these designs have made City Scanner a leading mobile sensing platform to empower environmental scientific research, support evidence-based environmental and climate decision-making, and encourage citizen engagement and awareness in environmental justice topics.
 
 ### **Sensing modules on a City Scanner**
+<img src="https://github.com/MIT-Senseable-City-Lab/OSCS/blob/main/flatburn-images/flatburn%20configuration.jpeg" width="800px">
 
+We illustrate City Scanner version **Flatburn** 
+
+Each City Scanner has two major modules, the core module and the sensor module. The core module houses the motherboard, the data communication and local storage system, and the battery and thermal performance management system. The sensor module, GPS and solar panel are connected to and managed by the core module. 
+
+Details of the core module design are presented in the hardware and firmware [open-source manual](https://github.com/MIT-Senseable-City-Lab/OSCS/blob/main/Build/Handbook/Flatburn_%20assembly%20guide.pdf).
