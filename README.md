@@ -1,11 +1,11 @@
-# Open-Source City Scanner (Flatburn)
+# Open Source City Scanner (Flatburn)
 
-This is the official repository for FLATBURN: an Open-Source City Scanner
+This is the official repository for FLATBURN: an Open Source City Scanner
 
 ### Flatburn Overview
 <img src="https://github.com/MIT-Senseable-City-Lab/OSCS/blob/main/flatburn-images/cover.jpeg" width="400px"><img src="https://github.com/MIT-Senseable-City-Lab/OSCS/blob/main/flatburn-images/Flatburn-design.png" width="300px">
 
-Part of the [cityscanner project](https://senseable.mit.edu/cityscanner/), Flatburn is an open-source mobile sensing platform that collects various environmental data which generate a new real-time map of sensed data, building on existing fleets.
+Part of the [City Scanner project](https://senseable.mit.edu/cityscanner/), Flatburn is an open-source mobile sensing platform that collects various environmental data which generate a new real-time map of sensed data, building on existing fleets.
 
 ## Build
 
