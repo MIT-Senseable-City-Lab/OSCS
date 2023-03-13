@@ -16,10 +16,10 @@ The [hardware schematics](Build/Hardware/Hardware%20schematics) folder contains 
 
 ## Explore
 - [/datasets](Explore/Datasets): The folder contains `.csv` calibrated air quality data collected during City Scanner deployments worldwide. 
-- [/calibration handbook](Explore/Calibration Handbook): The folder contains a guide for validation and calibration of the data collected by Flatburn.
+- [/calibration handbook](): The folder contains a guide for validation and calibration of the data collected by Flatburn.
 
 
 ## Learn
-- [/coding exercise](Coding%20Exercise): The folder contains [jupyter](https://jupyter.org/) notebooks for a coding activity written in Python to introduce non-experts to air quality and environmental sensing and analysis methods; including exploring time series analysis, geospatial analysis, and pollution hotspot analysis. The conding activity can be used with the [datasets](Explore/Datasets) captured by previous City Scanner deployment as well as data captured by Flatburn.
-- [/facilitator handbook](https://github.com/MIT-Senseable-City-Lab/OSCS/tree/main/Learn/Facilitator%20Handbook): The folder contains a facilitator guide and educational slides to implement the coding exercise as part of workshops or classroom activities.
+- [/coding exercise](Learn/Coding Exercise): The folder contains [jupyter](https://jupyter.org/) notebooks for a coding activity written in Python to introduce non-experts to air quality and environmental sensing and analysis methods; including exploring time series analysis, geospatial analysis, and pollution hotspot analysis. The conding activity can be used with the [datasets](Explore/Datasets) captured by previous City Scanner deployment as well as data captured by Flatburn.
+- [/facilitator handbook](Learn/Facilitator Handbook): The folder contains a facilitator guide and educational slides to implement the coding exercise as part of workshops or classroom activities.
 
