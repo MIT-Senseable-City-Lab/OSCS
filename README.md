@@ -19,8 +19,8 @@ The [hardware schematics](https://github.com/MIT-Senseable-City-Lab/OSCS/tree/ma
 ## Explore
 
 - [/datasets](https://github.com/MIT-Senseable-City-Lab/OSCS/tree/main/Explore/Datasets): The folder contains `.csv` Calibrated air quality data of the the cityscanner. 
-- [/data collection document](https://github.com/MIT-Senseable-City-Lab/OSCS/tree/main/Explore/Data%20collection%20document): Open-source manual for data collection
-- [/Calibration Code](https://github.com/MIT-Senseable-City-Lab/OSCS/tree/main/Explore/Calibration%20codes): Python codes for raw cityscanner data
+- [/data collection document](https://github.com/MIT-Senseable-City-Lab/OSCS/tree/main/Explore/Data%20collection%20document): Open-source manual and code for data collection
+
 
 
 ## Learn
