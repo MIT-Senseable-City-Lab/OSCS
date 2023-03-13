@@ -1,4 +1,4 @@
-# FLATBURN: the open source cit scanner
+# FLATBURN: the open source city scanner
 
 [Project website](https://senseable.mit.edu/flatburn).
 
@@ -16,7 +16,7 @@ The [hardware schematics](Build/Hardware/Hardware%20schematics) folder contains 
 
 ## Explore
 - [/datasets](Explore/Datasets): The folder contains `.csv` calibrated air quality data collected during City Scanner deployments worldwide. 
-- [/data collection document](Explore/Calibration Manual): The folder contains a guide for validation and calibration of the data collected by Flatburn.
+- [/calibration handbook](Explore/Calibration Handbook): The folder contains a guide for validation and calibration of the data collected by Flatburn.
 
 
 ## Learn
