@@ -5,7 +5,7 @@ This folder contains open City Scanner data sets collected in four deployments i
 
 Figure. Data post-processing and validation protocols
 
-Detailed information about the deployments and data files is included in he following table.
+Detailed information about the deployments and data files is included in he following table. In total, there are eight data files. Given that the second pilot in NYC contains a huge amount of data, its full dataset is divided into five sections. A [data descriptor](https://github.com/MIT-Senseable-City-Lab/OSCS/blob/main/Explore/Datasets/OSCS_OpenDataSupplement.pdf) is also included. 
 
 Table. Deployments and open data sets
 |City|Sensing target pollutants|Sensing fleet|Duration|
