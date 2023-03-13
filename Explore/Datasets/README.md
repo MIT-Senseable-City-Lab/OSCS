@@ -2,7 +2,7 @@ Please desribe directory content, including a table with list for each pilot: ty
 # Open City Scanner Data
 This folder contains open City Scanner data sets collected in four deployments in three cities. Raw sensor readings were collected and calibrated following standardized air sensor performance evaluation guidelines recommended by the U.S. EPA. The general method is presented in the following diagram and details can be found in the open source [calibration manual](Explore/Calibration Handbook/Calibration Handbook.pdf).
 
-<img src="flatburn-images/CityScanner Schematic Design.drawio.png" width="800px">
+<img src="(https://github.com/MIT-Senseable-City-Lab/OSCS/blob/main/flatburn-images/CityScanner%20Schematic%20Design.drawio.png)" width="800px">
 
 Figure. Data post-processing and validation protocols
 
