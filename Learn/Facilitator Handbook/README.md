@@ -6,7 +6,7 @@ techniques, including:
 - Creating time series graphs of measurements of environmental phenomena
 - Creating python-based web maps using the Python Leaflet.js library
 
-And more. There are 2 files in this directory - a facilitator guide and workshop slides. The facilitator guide is meant 
-to support an individual or teaching team in combining these resources to deliver during a class or workshop. The 
-workshop slides are an educational presentation on the background of environmental sensing, mobile air quality 
-monitoring, and CityScanner. 
+And more. There are 3 files in this directory - 2 facilitator guides and workshop slides. The facilitator guides are meant 
+to support an individual or teaching team in combining these resources to deliver during a class or workshop. There is one version for a Python
+notebook that can be run in an environment of your choice, and one version to aid the facilitation of a Google CoLab notebook. The workshop slides 
+are an educational presentation on the background of environmental sensing, mobile air quality monitoring, and CityScanner. 
