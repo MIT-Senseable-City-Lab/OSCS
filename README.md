@@ -5,9 +5,9 @@
 ### Flatburn Overview
 <img src="https://github.com/MIT-Senseable-City-Lab/OSCS/blob/main/flatburn-images/cover.jpeg" width="400px"><img src="https://github.com/MIT-Senseable-City-Lab/OSCS/blob/main/flatburn-images/Flatburn-design.png" width="300px">
 
-Part of the [City Scanner](https://senseable.mit.edu/cityscanner/) project at [MIT Senseable City Lab](https://senseable.mit.edu), Flatburn is an open-source, solar-powered, modular sensing platform that can be easily deployed on road vehciles to collect various environmental data. 
+Part of the [City Scanner](https://senseable.mit.edu/cityscanner/) project at [MIT Senseable City Lab](https://senseable.mit.edu), Flatburn is an open-source, solar-powered, modular sensing platform that can be easily deployed on road vehicles to collect various environmental data. 
 
-This repository contains all information to [build](build) your own Flatburn, [explore](explore) datasets collected using Flatburn and other City Scanner deployments worldwide and [learn](learn) how to perform environemental analyses and use the data to contribute to the development of healtier cities.
+This repository contains all information to [build](https://github.com/MIT-Senseable-City-Lab/OSCS/tree/main/Build) your own Flatburn, [explore](https://github.com/MIT-Senseable-City-Lab/OSCS/tree/main/Explore) datasets collected using Flatburn and other City Scanner deployments worldwide and [learn](https://github.com/MIT-Senseable-City-Lab/OSCS/tree/main/Learn) how to perform environmental analysis and use the data to contribute to the development of healtier cities.
 
 ## Build
  - [/hardware](Build/Hardware)  
