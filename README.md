@@ -7,7 +7,7 @@
 
 Part of the [City Scanner](https://senseable.mit.edu/cityscanner/) project at [MIT Senseable City Lab](https://senseable.mit.edu), Flatburn is an open-source, solar-powered, modular sensing platform that can be easily deployed on road vehciles to collect various environmental data. 
 
-This repository contains all information to [Build](build) your own Flatburn, [Explore](explore) datasets collected using Flatburn and other City Scanner deployments worlwide and [Learn](learn) how to perform environemental analyses and use the data to contribute to the development healtier cities.
+This repository contains all information to [build](build) your own Flatburn, [explore](explore) datasets collected using Flatburn and other City Scanner deployments worlwide and [learn](learn) how to perform environemental analyses and use the data to contribute to the development healtier cities.
 
 ## Build
  - [/hardware](Build/Hardware) includes 
