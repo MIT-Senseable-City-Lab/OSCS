@@ -16,13 +16,12 @@ This repository contains all information to [build](build) your own Flatburn, [e
  - [/firmware](Build/Firmware): The Flatburn main firmware code base, developed using [Particle.io](https://www.particle.io/workbench/) workbench.
  - [/fabrication handbook](Build/Handbook): The assembly guide with detailed instructions on how to build flatburn.
 
-
 ## Explore
 - [/datasets](Explore/Datasets): `.csv` calibrated air quality datasets collected during City Scanner deployments worldwide. 
 - [/calibration handbook](Explore/Calibration%20Handbook): a guide for validation and calibration of the data collected by Flatburn.
-
 
 ## Learn
 - [/coding exercise](Learn/Coding%20Exercise): [jupyter](https://jupyter.org/) notebooks for a Python coding activity to introduce non-experts to air quality and environmental sensing and analysis methods. The activity includes exploring time series analysis, geospatial analysis, and pollution hotspot analysis. The conding activity can be used with the [datasets](Explore/Datasets) captured by previous City Scanner deployment as well as data captured by Flatburn.
 - [/facilitator handbook](Learn/Facilitator%20Handbook): a facilitator guide and educational slides to implement the coding exercise as part of workshops or classroom activities.
 
+All materials are released under [MIT license](LICENSE).
