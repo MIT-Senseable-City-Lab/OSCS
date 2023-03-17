@@ -6,4 +6,4 @@ There are 2 versions:
 
 The notebooks provide sample code to run with New York City Deployment data, which can be edited to use different data files we provide in [explore/datasets](Explore/Datasets).
 
-Please refer to the [facilitator handbook](Learn/Facilitator%20Handbook) for further instructions. 
+Please refer to the [facilitator handbook](/Learn/Facilitator%20Handbook) for further instructions. 
