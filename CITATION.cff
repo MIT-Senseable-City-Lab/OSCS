@@ -1,0 +1,31 @@
+cff-version: 1.0
+message: "If you use resources from this repository, please cite it as below."
+authors:
+- family-names: "Mora"
+  given-names: "Simone"
+- family-names: "Wang"
+  given-names: "An"
+  orcid: "https://orcid.org/0000-0002-1874-2702"
+- family-names: "Oyinlola"
+  given-names: "Oluwatobi"
+- family-names: "Paul"
+  given-names: "Sanjana"
+- family-names: "Nwigwe"
+  given-names: "Alexandra"
+- family-names: "Machida"
+  given-names: "Yuki"
+- family-names: "Hagemann"
+  given-names: "Niklas"
+- family-names: "Agrawal"
+  given-names: "Surbhi"
+- family-names: "Morra"
+  given-names: "Diego"
+- family-names: "Duarte"
+  given-names: "Fabio"
+- family-names: "Ratti"
+  given-names: "Carlo"
+title: "Open Sourced City Scanner"
+version: 1.0.0
+doi: 10.5281/zenodo.7762000
+date-released: 2023-03-16
+url: "https://github.com/MIT-Senseable-City-Lab/OSCS"
