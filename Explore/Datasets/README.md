@@ -10,6 +10,6 @@ Detailed information about the deployments and data files is included in he foll
 Table. Deployments and open data sets
 |City|Sensing target pollutants|Sensing fleet|Duration|
 |----|-------------------------|-------------|--------|
-|New York City, US|Particulate matter, particle size distribution, NO2|Five municipal vehicles|Oct. 2020 - Feb. 2021; Sep. 2021 - Dec. 2021|
+|New York City, US|Particulate matter, particle size distribution, NO2|Five municipal vehicles|Jan. 2020 - Feb. 2021; Sep. 2021 - Dec. 2021|
 |Boston, US|Particulate matter, particle size distribution, NO2|One mobile air laboratory|Feb. 2022 - Apr. 2022|
 |Beirut, Lebanon|Particulate matter, particle size distribution|Two taxis|Feb. 2022 - Jun. 2022|
