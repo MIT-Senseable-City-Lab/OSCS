@@ -80,18 +80,42 @@ int Cityscanner::init()
   {
   case TEST:
     break;
-  default:
-    Serial.println("Turning ON 3V3");
-    core.enable3V3(true);
+  case LOGGING:
+    //Serial.println("Turning ON 3V3");
+    //core.enable3V3(true);
     delay(DTIME);
     delay(1s);
     Serial.println("Turning ON GPS");
     locationService.start();
     delay(DTIME);
     Serial.println("Turning ON Vitals");
-    // vitals.init(); // TBC
+    vitals.init(); // TBC
     delay(DTIME);
-    Serial.println("Turning ON NOISE sensor");
+    Serial.println("Turning ON 5V line");
+    core.enable5V(true);
+    delay(DTIME);
+    Serial.println("Turning ON 5V line");
+
+    Serial.println("Turning ON Gas sensor");
+    sense.startGAS(); // TBC
+    delay(DTIME);
+    delay(1s);
+
+    Serial.println("Turning ON Temperature sensor");
+    sense.startTEMP(); // TBC
+    delay(DTIME);
+
+    delay(4s);
+    
+    if (OPC_ENABLED)
+    {
+      Serial.println("Turning ON OPC");
+      sense.startOPC();
+      delay(DTIME);
+    }
+    break;
+  default:
+    /*Serial.println("Turning ON NOISE sensor");
     sense.startNOISE();
     delay(DTIME);
     Serial.println("Turning ON Temperature sensor");
@@ -119,7 +143,7 @@ int Cityscanner::init()
       Serial.println("Turning ON OPC");
       sense.startOPC();
       delay(DTIME);
-    }
+    }*/
     break;
   }
   Log.info("end INIT");
@@ -142,7 +166,7 @@ void Cityscanner::loop()
     else
     {
 
-      data_payload = String::format("%s,%s,%s,%s,%s,%f", sense.getOPCdata(OPC_DATA_VERSION).c_str(), // PM1,PM25,PM10,[bins],flow_rate,countglitch,laser_status,tempopc,humopc,valid
+      data_payload = String::format("%s,%s,%s,%s,%s", sense.getOPCdata(OPC_DATA_VERSION).c_str(), // PM1,PM25,PM10,[bins],flow_rate,countglitch,laser_status,tempopc,humopc,valid
                                     sense.getTEMPdata().c_str(),                                     // temp,humidity
                                     sense.getIRdata().c_str(),                                       // IR_temperature
                                     sense.getGASdata().c_str(),                                      // w1,r1,w2,r2
@@ -162,13 +186,14 @@ void Cityscanner::loop()
       Log.info("Real Time");
       break;
     case LOGGING:
-      /* Dumping data over TCP every 50*sampling_rate seconds
-      Serial.print("counter: "); Serial.println(counter++);
-      if (counter % 50 == 0)
-        store.dumpData(ALL_FILES);*/
+      // Dumping data over TCP every 50*sampling_rate seconds
+      //Serial.print("counter: "); Serial.println(counter++);
+      //if (counter % 50 == 0)
+        //store.dumpData(ALL_FILES);
       // printDebug();
-      Serial.print("Temp data : ");
-      Serial.println(sense.getTEMPdata().c_str());
+      //Serial.print("Temp data : ");
+      //Serial.println(sense.getTEMPdata().c_str());
+      Serial.println(vitals.getTempIntData().c_str());
       store.logData(BROADCAST_NONE, Data, data_payload);
       Log.info("Data Logging");
       // Serial.print("IR: "); Serial.println(sense.getIRdata());
@@ -230,13 +255,14 @@ void Cityscanner::loop()
 
   motionService.loop();
   // Serial.print("Tap: "); Serial.println(digitalRead(WKP));
+  
 }
 
 void Cityscanner::checkbattery()
 {
-  float battery_v = 5;
-  battery_v = fuel.getVCell();
-  // Log.info("Battery voltage:" + String(battery_v));
+  int batt_volt_adc = analogRead(BATTERY_VOLTAGE_PIN);
+  float battery_v = (batt_volt_adc / 4095.0) * 3.3 * 2;
+  Log.info("Battery voltage:" + String(battery_v));
   if (battery_v < LOW_BATTERY_THRESHOLD)
   {
     String message = "LOW_BATTERY_" + String(battery_v) + "_v";
