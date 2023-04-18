@@ -1,7 +1,12 @@
 #include "Particle.h"
 #include "motion_service.h"
 
-LSM6DS3 myIMU(I2C_MODE,0x6A);
+float   sampleRate = 6.25;  // HZ - Samples per second - 0.781, 1.563, 3.125, 6.25, 12.5, 25, 50, 100, 200, 400, 800, 1600Hz
+uint8_t accelRange = 2;     // Accelerometer range = 2, 4, 8, 16g
+
+int32_t result;
+
+KXTJ3 myIMU(0x0E); // Address can be 0x0E or 0x0F
 
 MotionService *MotionService::_instance = nullptr;
 int MotionService::inactivity_counter = 0;
@@ -21,21 +26,21 @@ MotionService::MotionService() {
 int MotionService::start()
 {
     Particle.variable("OVERRIDE_AS", OVVERRIDE_AUTOSLEEP);
-    myIMU.begin();
+    //myIMU.begin();
     //Error accumulation variable
 	uint8_t errorAccumulator = 0;
-	uint8_t dataToWrite = 0;  //Temporary variable
+	/*uint8_t dataToWrite = 0;  //Temporary variable
 	//Setup the accelerometer******************************
 	dataToWrite = 0; //Start Fresh!
 	dataToWrite |= LSM6DS3_ACC_GYRO_BW_XL_200Hz;
 	dataToWrite |= LSM6DS3_ACC_GYRO_FS_XL_2g;
 	dataToWrite |= LSM6DS3_ACC_GYRO_ODR_XL_208Hz;
 	// //Now, write the patched together data
-	errorAccumulator += myIMU.writeRegister(LSM6DS3_ACC_GYRO_CTRL1_XL, dataToWrite);
+	errorAccumulator += myIMU.writeRegister(LSM6DS3_ACC_GYRO_CTRL1_XL, dataToWrite);*/
 
     if (HW_VERSION == V4)
     {
-    #define LSM6DSL_ACC_GYRO_TAP_CFG                0x58
+    /*#define LSM6DSL_ACC_GYRO_TAP_CFG                0x58
     #define LSM6DSL_ACC_GYRO_TAP_THS_6D             0x59
     #define LSM6DSL_ACC_GYRO_INT_DUR2               0x5A
     #define LSM6DSL_ACC_GYRO_WAKE_UP_THS            0x5B
@@ -45,12 +50,29 @@ int MotionService::start()
     errorAccumulator += myIMU.writeRegister(LSM6DSL_ACC_GYRO_TAP_THS_6D, 0x03);
     errorAccumulator += myIMU.writeRegister(LSM6DSL_ACC_GYRO_INT_DUR2, 0x7F);
     errorAccumulator += myIMU.writeRegister(LSM6DSL_ACC_GYRO_WAKE_UP_THS, 0x80);
-    errorAccumulator += myIMU.writeRegister(LSM6DSL_ACC_GYRO_MD1_CFG, 0x48);
+    errorAccumulator += myIMU.writeRegister(LSM6DSL_ACC_GYRO_MD1_CFG, 0x48);*/
+        if( myIMU.begin(sampleRate, accelRange) != 0 )
+        {
+            Serial.print("Failed to initialize IMU.\n");
+        }
+        else
+        {
+            Serial.print("IMU initialized.\n");
+        }
+
+        myIMU.intConf(123, 1, 10, LOW);         // Need to adjust threshold value here
+
+        uint8_t readData = 0;
+
+        // Get the ID:
+        myIMU.readRegister(&readData, KXTJ3_WHO_AM_I);
+        Serial.print("Who am I? 0x");
+        Serial.println(readData, HEX);
     }
     else
     {      
     //Set the ODR bit
-	errorAccumulator += myIMU.readRegister(&dataToWrite, LSM6DS3_ACC_GYRO_CTRL4_C);
+	/*errorAccumulator += myIMU.readRegister(&dataToWrite, LSM6DS3_ACC_GYRO_CTRL4_C);
 	dataToWrite &= ~((uint8_t)LSM6DS3_ACC_GYRO_BW_SCAL_ODR_ENABLED);
     //Set the duration for Inactivity detection this field is set to 0010b, corresponding to 4.92 s (= 2 * 512 / ODR_XL). After this period of time has elapsed, the accelerometer ODR is internally set to 12.5 Hz.
     errorAccumulator += myIMU.writeRegister( LSM6DS3_ACC_GYRO_WAKE_UP_DUR, 0x02 );
@@ -58,7 +80,7 @@ int MotionService::start()
     //WAKE_UP_THS register is set to 000010b, therefore the Activity/Inactivity threshold is 62.5 mg (= 2 * FS_XL / 26).
     errorAccumulator += myIMU.writeRegister( LSM6DS3_ACC_GYRO_WAKE_UP_THS, 0x42 );
     //Set INT1 to be triggered only by activity events
-    errorAccumulator += myIMU.writeRegister( LSM6DS3_ACC_GYRO_MD1_CFG, 0x20 ); /// INT configure for tap
+    errorAccumulator += myIMU.writeRegister( LSM6DS3_ACC_GYRO_MD1_CFG, 0x20 );*/ /// INT configure for tap
     //errorAccumulator += myIMU.writeRegister( LSM6DS3_ACC_GYRO_MD1_CFG, 0x80 ); /// INT1 configured for activity/inactivity
     }
 	
@@ -88,6 +110,7 @@ int MotionService::stop()
 
 int MotionService::waitOnEvent()
 {
+    return 1;
     // check accelerometer for events and add it to event queque
     // if no motion events for x minutes go to sleep
 }
@@ -123,15 +146,15 @@ void MotionService::setOverrideAutosleep(bool override)
 }
 
 void MotionService::testAccelerometer()
-{
+{  
   Serial.print("\nAccelerometer:\n");
   Serial.print(" X = ");
-  Serial.println(myIMU.readFloatAccelX(), 4);
+  Serial.println(myIMU.axisAccel( X ), 4);
   Serial.print(" Y = ");
-  Serial.println(myIMU.readFloatAccelY(), 4);
+  Serial.println(myIMU.axisAccel( Y ), 4);
   Serial.print(" Z = ");
-  Serial.println(myIMU.readFloatAccelZ(), 4);
-  Serial.print("\nGyroscope:\n");
+  Serial.println(myIMU.axisAccel( Z ), 4);
+  /*Serial.print("\nGyroscope:\n");
   Serial.print(" X = ");
   Serial.println(myIMU.readFloatGyroX(), 4);
   Serial.print(" Y = ");
@@ -142,6 +165,6 @@ void MotionService::testAccelerometer()
   Serial.print(" Degrees C = ");
   Serial.println(myIMU.readTempC(), 4);
   Serial.print(" Degrees F = ");
-  Serial.println(myIMU.readTempF(), 4);
+  Serial.println(myIMU.readTempF(), 4);*/
   delay(1000);
 }
