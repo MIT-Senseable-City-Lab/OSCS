@@ -14,7 +14,7 @@ CitySleep::CitySleep() :
 {}
 
 int CitySleep::init(){
-
+    return 1;
 }
 
 void CitySleep::stop(){
@@ -42,7 +42,8 @@ void CitySleep::stop(){
     SystemSleepConfiguration config;
     config.mode(SystemSleepMode::STOP)
         .duration(std::chrono::hours(12))
-        .gpio(WKP,CHANGE)
+        //.gpio(WKP,CHANGE)
+        .gpio(INT_ACC, CHANGE)
         .network(NETWORK_INTERFACE_CELLULAR, SystemSleepNetworkFlag::INACTIVE_STANDBY);
     System.sleep(config);
     if(Cityscanner::instance().debug_mode){
