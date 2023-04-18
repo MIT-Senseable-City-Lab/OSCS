@@ -1,0 +1,54 @@
+#######################################
+# Syntax Coloring Map For i2c_adc_ads7828
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+i2c_adc_ads7828	KEYWORD1
+ADS7828	KEYWORD1
+ADS7828Channel	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+address	KEYWORD2
+begin	KEYWORD2
+channel	KEYWORD2
+commandByte	KEYWORD2
+device	KEYWORD2
+id	KEYWORD2
+index	KEYWORD2
+newSample	KEYWORD2
+reset	KEYWORD2
+sample	KEYWORD2
+start	KEYWORD2
+total	KEYWORD2
+update	KEYWORD2
+updateAll	KEYWORD2
+value	KEYWORD2
+
+maxScale	KEYWORD2
+minScale	KEYWORD2
+
+
+#######################################
+# Instances (KEYWORD2)
+#######################################
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+DIFFERENTIAL	LITERAL1
+SINGLE_ENDED	LITERAL1
+REFERENCE_OFF	LITERAL1
+REFERENCE_ON	LITERAL1
+ADC_OFF	LITERAL1
+ADC_ON	LITERAL1
+
+DEFAULT_CHANNEL_MASK	LITERAL1
+DEFAULT_MIN_SCALE	LITERAL1
+DEFAULT_MAX_SCALE	LITERAL1
