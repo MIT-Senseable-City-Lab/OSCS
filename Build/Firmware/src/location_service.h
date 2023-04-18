@@ -26,6 +26,9 @@ class LocationService {
     int stop();
     bool location_started = false;
     String getGPSdata(void);
+    String getGPStime(void);
+    String getEpochTime(void);
+
 
 
     private:
