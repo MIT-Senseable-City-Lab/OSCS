@@ -1,6 +1,6 @@
 #pragma once
 #include "Particle.h"
-#include "LSM6DS3.h"
+#include "kxtj3-1057.h"
 #include "cityscanner_CONFIG.h"
 #include "cityscanner_sleep.h"
 
