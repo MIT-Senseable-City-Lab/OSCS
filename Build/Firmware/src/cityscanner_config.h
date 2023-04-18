@@ -8,9 +8,9 @@
 
 #define HW_VERSION V4
 
-#define OPC_ENABLED FALSE
+#define OPC_ENABLED TRUE
 #define IR_ENABLED FALSE
-#define CELLULAR_ON_STARTUP FALSE
+#define CELLULAR_ON_STARTUP TRUE
 #define DTIME 100 
 
 #define HARVARD_PILOT FALSE         //Is this an Harvard pilot device?
