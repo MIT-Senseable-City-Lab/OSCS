@@ -1,6 +1,7 @@
 #pragma once
 #include "cityscanner_CONFIG.h"
 #include "Particle.h"
+#include "SparkFun_SHTC3.h" 
 
 
 class CityVitals {
@@ -26,6 +27,7 @@ class CityVitals {
         String getBatteryData(void);
         String getChargingStatus(void);
         bool isBatteryLow();
+        float getBatteryVoltage();
         
         bool startSolar(void);
         bool stopSolar(void);
@@ -36,6 +38,7 @@ class CityVitals {
         bool stopTempInt(void);
         bool TEMPint_started = false;
         String getTempIntData(void);
+        void errorDecoder(SHTC3_Status_TypeDef message);                             // The errorDecoder function prints "SHTC3_Status_TypeDef" resultsin a human-friendly way
 
         String getSignalStrenght();
 
