@@ -104,32 +104,34 @@ void CS_core::begin(uint8_t hw_release)
   case V4:
   {
     pinMode(EN_3V, OUTPUT);
-	pinMode(EN_3V_GPS, OUTPUT);
+	  pinMode(EN_3V_GPS, OUTPUT);
     pinMode(EN_5V, OUTPUT);
     //pinMode(EN_OPC, OUTPUT);
     //pinMode(EN_HEATER, OUTPUT);
 
     //pinMode(INT_GPS, INPUT);
 
-    pinMode(MB_RST, OUTPUT);
-    pinMode(MB_INT, INPUT);
+    //pinMode(MB_RST, OUTPUT);
+    //pinMode(MB_INT, INPUT);
     pinMode(MB_AN, INPUT);
     pinMode(MB_CS, OUTPUT);
-    pinMode(MB_PWM, OUTPUT);
+   // pinMode(MB_PWM, OUTPUT);
+
+    pinMode(INT_ACC, INPUT);
 
     //pinMode(STAT1, INPUT_PULLUP);
     //pinMode(STAT2, INPUT_PULLUP);
 
     //default configuration - everything OFF
-    digitalWrite(EN_3V, LOW);
-	digitalWrite(EN_3V_GPS, LOW);
-    digitalWrite(EN_5V, LOW);
+    digitalWrite(EN_3V, HIGH);
+	  digitalWrite(EN_3V_GPS, HIGH);
+    digitalWrite(EN_5V, HIGH);
     //digitalWrite(EN_OPC, LOW);
     //digitalWrite(EN_HEATER, LOW);
 
-    digitalWrite(MB_RST, LOW);
+    //digitalWrite(MB_RST, LOW);
     digitalWrite(MB_CS, LOW);
-    digitalWrite(MB_PWM, LOW);
+    //digitalWrite(MB_PWM, LOW);
   }
   default:
     break;
@@ -300,13 +302,13 @@ void CS_core::enable3V3(bool command)
     if (command)
     {
       digitalWrite(EN_3V, HIGH);
-	  digitalWrite(EN_3V_GPS, HIGH);
+	    //digitalWrite(EN_3V_GPS, HIGH);
       Log.info("3V3 Enabled");
     }
     else
     {
       digitalWrite(EN_3V, LOW);
-	  digitalWrite(EN_3V_GPS, LOW);
+	    //digitalWrite(EN_3V_GPS, LOW);
       Log.info("3V3 Disabled");
     }
     break;
@@ -518,8 +520,8 @@ void CS_core::enableALL(bool command)
     if (command)
     {
       digitalWrite(EN_3V, HIGH);
-	  delay(500);
-	  digitalWrite(EN_3V_GPS, HIGH);
+	    delay(500);
+	    digitalWrite(EN_3V_GPS, HIGH);
       delay(500);
       digitalWrite(EN_5V, HIGH);
       delay(500);
@@ -532,7 +534,7 @@ void CS_core::enableALL(bool command)
     else
     {
       digitalWrite(EN_3V, LOW);
-	  digitalWrite(EN_3V_GPS, LOW);
+      digitalWrite(EN_3V_GPS, LOW);
       digitalWrite(EN_5V, LOW);
       //digitalWrite(EN_OPC, LOW);
       //digitalWrite(EN_HEATER, LOW);
