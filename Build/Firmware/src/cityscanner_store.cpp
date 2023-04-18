@@ -109,7 +109,8 @@ int CityStore::switch_logfile()
 
 void CityStore::logData(int broadcastType, int payloadType, String data)
 {
-  String output = String::format("%d,%s,%d,%s,%s", payloadType, deviceID.c_str(), (int)Time.now(), LocationService::instance().getGPSdata().c_str(), data.c_str());
+  //String output = String::format("%d,%s,%d,%s,%s", payloadType, deviceID.c_str(), (int)Time.now(), LocationService::instance().getGPSdata().c_str(), data.c_str());
+  String output = String::format("%d,%s,%s,%s,%s", payloadType, deviceID.c_str(), LocationService::instance().getEpochTime().c_str(), LocationService::instance().getGPSdata().c_str(), data.c_str());
   writeData(output);
 
   switch (broadcastType)
