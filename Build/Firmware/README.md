@@ -50,6 +50,7 @@ stop | || |Stops the device (light sleep) for 12hours or until it woken up by a 
 hibernate | [duration] | seconds OR minutes OR hours| Hibernate the device (heavy sleep)
 reboot  | | | | Resets the device to default
 location | | | | Returns the latest known GPS coordinates
+device | check | | Return the device ID and last payload, useful for multiple devices
 last | payload | | Return the last payload (See payload schema above)
 last | vitals | |  Return the last vitals (See vitals schema above)
 sd | files | | | Returns n. of files buffered in the SD card
