@@ -152,6 +152,15 @@ int commandLine(String command)
           Particle.publish("last_vitals", response);
     }
   }
+
+  else if (!first_parameter.compareTo("device-check"))
+  {
+     String response = "na";
+     response = System.deviceID() + "," + LocationService::instance().getEpochTime() + "," + LocationService::instance().getGPSdata() + "," + Cityscanner::instance().data_payload;
+     if (Particle.connected())
+        Particle.publish("device",response);
+  }
+
   else if (!first_parameter.compareTo("location"))
   {
     String status = "na";
