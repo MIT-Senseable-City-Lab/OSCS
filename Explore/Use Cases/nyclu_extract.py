@@ -10,17 +10,17 @@ import pandas as pd
 from shapely.geometry import Point, Polygon, shape
 import matplotlib.pyplot as plt
 
-bronx_grid = 'D://MIT Research Docs//NYC_LUR_2206//Mapping Files//Projected Land Use Surfaces//Bronx//NYCCASFallGrid_Bronx.shp'
-nyc_aadt = 'D://MIT Research Docs//NYC_LUR_2206//Mapping Files//Projected Land Use Surfaces//Bronx//AADT_Bronx.shp'
-nyc_road = 'D://MIT Research Docs//NYC_LUR_2206//Mapping Files//Projected Land Use Surfaces//Bronx//Roads_Bronx.shp'
-nyc_busroute = 'D://MIT Research Docs//NYC_LUR_2206//Mapping Files//Projected Land Use Surfaces//Bronx//BusRoute_Bronx.shp'
-nyc_truckroute = 'D://MIT Research Docs//NYC_LUR_2206//Mapping Files//Projected Land Use Surfaces//Bronx//TruckRoute_Bronx.shp'
-nyc_popu = 'D://MIT Research Docs//NYC_LUR_2206//Mapping Files//Projected Land Use Surfaces//Bronx//BlockGroup_Bronx.shp'
-nyc_pluto = 'D://MIT Research Docs//NYC_LUR_2206//Mapping Files//Projected Land Use Surfaces//Bronx//MapPluto_Bronx.shp'
-nyc_facility = 'D://MIT Research Docs//NYC_LUR_2206//Mapping Files//Projected Land Use Surfaces//Bronx//Facilities_Bronx.shp'
-bronx_commcook = 'D://MIT Research Docs//NYC_LUR_2206//Mapping Files//Projected Land Use Surfaces//Bronx//Bronx_CommCooking.shp'
+bronx_grid = '...//NYCCASFallGrid_Bronx.shp'
+nyc_aadt = '...//AADT_Bronx.shp'
+nyc_road = '...//Roads_Bronx.shp'
+nyc_busroute = '...//BusRoute_Bronx.shp'
+nyc_truckroute = '...//TruckRoute_Bronx.shp'
+nyc_popu = '...//BlockGroup_Bronx.shp'
+nyc_pluto = '...//MapPluto_Bronx.shp'
+nyc_facility = '...//Facilities_Bronx.shp'
+bronx_commcook = '...//Bronx_CommCooking.shp'
 # brxgrid_df should have the same dimension as bronx_grid
-brxgrid_df = pd.read_csv('D://MIT Research Docs//NYC_LUR_2206//Python Codes//BronxFallGrid.csv')
+brxgrid_df = pd.read_csv('...//BronxFallGrid.csv')
 # brxgrid_df = brxgrid_df.drop(brxgrid_df.columns[range(1,25)], axis=1)
 
 ##### Area and length calculation #####
@@ -169,7 +169,7 @@ def grab_num(grid_dir, facility_dir, buffer_size):
 # brxgrid_df['BsDpDist'], brxgrid_df['PortDist'], brxgrid_df['RlydDist'],\
 # brxgrid_df['WstProcDist'], brxgrid_df['WtTrtDist'], brxgrid_df['AportDist'] = grab_dist(bronx_grid, nyc_road, nyc_busroute, nyc_truckroute, nyc_facility)
 # print('Finished distance calculation')
-# brxgrid_df.to_csv('D://MIT Research Docs//NYC_LandUseRegression//Python Codes//BronxFallGrid_LU1.csv')
+# brxgrid_df.to_csv('...//BronxFallGrid_LU1.csv')
 
 # brxgrid_df['StLength_50'], brxgrid_df['HwLength_50'], brxgrid_df['BsRtLength_50'], brxgrid_df['TrkRtLength_50'],\
 # brxgrid_df['AADT_50'], brxgrid_df['TruckAADT_50'], brxgrid_df['BldArea_50'],\
@@ -190,7 +190,7 @@ def grab_num(grid_dir, facility_dir, buffer_size):
 # brxgrid_df['ComArea_250'], brxgrid_df['RecArea_250'], brxgrid_df['CATS_250'],\
 # brxgrid_df['Bnchmrk_250'], brxgrid_df['TotalPopu_250'] = grab_len_area(bronx_grid, nyc_aadt, nyc_road, nyc_busroute, nyc_truckroute, nyc_popu, nyc_pluto, 250)
 # print('Finished area & length calculation 250')
-# brxgrid_df.to_csv('D://MIT Research Docs//NYC_LandUseRegression//Python Codes//BronxFallGrid_LU2.csv')
+# brxgrid_df.to_csv('...//BronxFallGrid_LU2.csv')
 
 # brxgrid_df['StLength_500'], brxgrid_df['HwLength_500'], brxgrid_df['BsRtLength_500'], brxgrid_df['TrkRtLength_500'],\
 # brxgrid_df['AADT_500'], brxgrid_df['TruckAADT_500'], brxgrid_df['BldArea_500'],\
@@ -204,7 +204,7 @@ def grab_num(grid_dir, facility_dir, buffer_size):
 # brxgrid_df['ComArea_1000'], brxgrid_df['RecArea_1000'], brxgrid_df['CATS_1000'],\
 # brxgrid_df['Bnchmrk_1000'], brxgrid_df['TotalPopu_1000'] = grab_len_area(bronx_grid, nyc_aadt, nyc_road, nyc_busroute, nyc_truckroute, nyc_popu, nyc_pluto, 1000)
 # print('Finished area & length calculation 1000')
-# brxgrid_df.to_csv('D://MIT Research Docs//NYC_LandUseRegression//Python Codes//BronxFallGrid_LU3.csv')
+# brxgrid_df.to_csv('...//BronxFallGrid_LU3.csv')
 
 # brxgrid_df['BusDepot_50'], brxgrid_df['Port_50'], \
 # brxgrid_df['Railyard_50'], brxgrid_df['WasteProc_50'],\
@@ -226,7 +226,7 @@ def grab_num(grid_dir, facility_dir, buffer_size):
 # brxgrid_df['Railyard_1000'], brxgrid_df['WasteProc_1000'],\
 # brxgrid_df['WaterTreat_1000'], brxgrid_df['Airport_1000'] = grab_num(bronx_grid, nyc_facility, 1000)
 # print('Finished facility counting 1000')
-# brxgrid_df.to_csv('D://MIT Research Docs//NYC_LUR_2206//Python Codes//BronxFallGrid_LU9.csv')
+# brxgrid_df.to_csv('...//BronxFallGrid_LU9.csv')
 
 def grab_restaurant(grid_dir, restr_dir):
     grid = gpd.read_file(grid_dir)
@@ -255,7 +255,7 @@ def grab_restaurant(grid_dir, restr_dir):
 # brxgrid_df['RstrDist'], brxgrid_df['Restaurant_50'], brxgrid_df['Restaurant_100'],\
 # brxgrid_df['Restaurant_250'], brxgrid_df['Restaurant_500'], brxgrid_df['Restaurant_1000'] = grab_restaurant(bronx_grid, bronx_commcook)
 brxgrid_df['Restaurant_500'], brxgrid_df['Restaurant_1000'] = grab_restaurant(bronx_grid, bronx_commcook)
-# brxgrid_df.to_csv('D://MIT Research Docs//NYC_LUR_2206//Python Codes//BronxFallGrid_LU8.csv')
+# brxgrid_df.to_csv('...//BronxFallGrid_LU8.csv')
     
     
     
