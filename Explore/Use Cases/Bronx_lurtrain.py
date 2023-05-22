@@ -16,11 +16,11 @@ from lightgbm import LGBMRegressor
 import shap
 import joblib
 
-brx_trainlu = 'D://MIT Research Docs//NYC_LUR_2206//Python Codes//BronxFallPMGrid_MedianTrainRstr.csv'
-brx_prdlu = 'D://MIT Research Docs//NYC_LUR_2206//Python Codes//BronxFallGrid_LU.csv'
-lga_meteo = 'D://MIT Research Docs//NYC_LUR_2206//Python Codes//DailyMeteo_Sep2Dec.csv'
+brx_trainlu = '...//BronxFallPMGrid_MedianTrainRstr.csv'
+brx_prdlu = '...//BronxFallGrid_LU.csv'
+lga_meteo = '...//DailyMeteo_Sep2Dec.csv'
 
-brx_NO2trainlu = 'D://MIT Research Docs//NYC_LUR_2206//Python Codes//BronxFallNO2Grid_MedianTrainRstr.csv'
+brx_NO2trainlu = '...//BronxFallNO2Grid_MedianTrainRstr.csv'
 
 
 # pm_linperf, best_pmlin = brx_linregr(brx_trainlu)
