@@ -52,14 +52,14 @@ def rf_hyptune(lur_dir, plt_id = 0):
                            scoring='neg_root_mean_squared_error').fit(xval, yval)           
     return best_rf, xtraintest, ytraintest    
 # pm_rf, pm_xtraintest, pm_ytraintest = rf_hyptune(brx_trainlu)
-# joblib.dump(pm_lgb,'D://MIT Research Docs//NYC_LandUseRegression//Python Codes//PM_RF_WStd')
-# pm_xtraintest.to_csv('D://MIT Research Docs//NYC_LandUseRegression//Python Codes//PM_RF_xWStd.csv', index=False)
-# pm_ytraintest.to_csv('D://MIT Research Docs//NYC_LandUseRegression//Python Codes//PM_RF_yWStd.csv', index=False)   
+# joblib.dump(pm_lgb,'...//PM_RF_WStd')
+# pm_xtraintest.to_csv('...//PM_RF_xWStd.csv', index=False)
+# pm_ytraintest.to_csv('...//PM_RF_yWStd.csv', index=False)   
 
 # no2_rf, no2_xtraintest, no2_ytraintest = rf_hyptune(brx_NO2trainlu, 1)
-# joblib.dump(no2_lgb,'D://MIT Research Docs//NYC_LUR_2206//Python Codes//NO2_LGBT_MedianRStr')
-# no2_xtraintest.to_csv('D://MIT Research Docs//NYC_LUR_2206//Python Codes//NO2_LGBT_xMedianRStr.csv', index=False)
-# no2_ytraintest.to_csv('D://MIT Research Docs//NYC_LUR_2206//Python Codes//NO2_LGBT_yMedianRStr.csv', index=False)  
+# joblib.dump(no2_lgb,'...//NO2_LGBT_MedianRStr')
+# no2_xtraintest.to_csv('...//NO2_LGBT_xMedianRStr.csv', index=False)
+# no2_ytraintest.to_csv('...//NO2_LGBT_yMedianRStr.csv', index=False)  
 
 
 def lgb_hyptune(lur_dir, plt_id = 0):
@@ -98,14 +98,14 @@ def lgb_hyptune(lur_dir, plt_id = 0):
     return best_lgb, xtraintest, ytraintest # xscaler, yscaler
 
 # pm_lgb, pm_xtraintest, pm_ytraintest = lgb_hyptune(brx_trainlu)
-# joblib.dump(pm_lgb,'D://MIT Research Docs//NYC_LUR_2206//Python Codes//PM_LGBT_MedianRStr')
-# pm_xtraintest.to_csv('D://MIT Research Docs//NYC_LUR_2206//Python Codes//PM_LGBT_xMedianRStr.csv', index=False)
-# pm_ytraintest.to_csv('D://MIT Research Docs//NYC_LUR_2206//Python Codes//PM_LGBT_yMedianRStr.csv', index=False)
+# joblib.dump(pm_lgb,'...//PM_LGBT_MedianRStr')
+# pm_xtraintest.to_csv('...//PM_LGBT_xMedianRStr.csv', index=False)
+# pm_ytraintest.to_csv('...//PM_LGBT_yMedianRStr.csv', index=False)
 
 # no2_lgb, no2_xtraintest, no2_ytraintest = lgb_hyptune(brx_NO2trainlu, 1)
-# joblib.dump(no2_lgb,'D://MIT Research Docs//NYC_LUR_2206//Python Codes//NO2_LGBT_MedianRStr')
-# no2_xtraintest.to_csv('D://MIT Research Docs//NYC_LUR_2206//Python Codes//NO2_LGBT_xMedianRStr.csv', index=False)
-# no2_ytraintest.to_csv('D://MIT Research Docs//NYC_LUR_2206//Python Codes//NO2_LGBT_yMedianRStr.csv', index=False)
+# joblib.dump(no2_lgb,'...//NO2_LGBT_MedianRStr')
+# no2_xtraintest.to_csv('...//NO2_LGBT_xMedianRStr.csv', index=False)
+# no2_ytraintest.to_csv('...//NO2_LGBT_yMedianRStr.csv', index=False)
 
 
 def nyclu_train(valid_lgb, xtraintest, ytraintest):
@@ -134,17 +134,17 @@ def nyclu_train(valid_lgb, xtraintest, ytraintest):
     lur_perf = pd.DataFrame(lgb_perf, columns = ['Pseudo-R2', 'RMSE'])
     return lur_perf, best_lgb
 
-# pm_lgb = joblib.load('D://MIT Research Docs//NYC_LUR_2206//Python Codes//PM_LGBT_MedianRStr')
-# pm_xtraintest = pd.read_csv('D://MIT Research Docs//NYC_LUR_2206//Python Codes//PM_LGBT_xMedianRStr.csv')
-# pm_ytraintest = pd.read_csv('D://MIT Research Docs//NYC_LUR_2206//Python Codes//PM_LGBT_yMedianRStr.csv')
+# pm_lgb = joblib.load('...//PM_LGBT_MedianRStr')
+# pm_xtraintest = pd.read_csv('...//PM_LGBT_xMedianRStr.csv')
+# pm_ytraintest = pd.read_csv('...//PM_LGBT_yMedianRStr.csv')
 # pmlur_perf, best_pmlgb = nyclu_train(pm_lgb, pm_xtraintest, pm_ytraintest)
-# joblib.dump(best_pmlgb, 'D://MIT Research Docs//NYC_LUR_2206//Python Codes//PM_BestLGBT_MedianRStr')
+# joblib.dump(best_pmlgb, '...//PM_BestLGBT_MedianRStr')
 
-# no2_lgb = joblib.load('D://MIT Research Docs//NYC_LUR_2206//Python Codes//NO2_LGBT_MedianRStr')
-# no2_xtraintest = pd.read_csv('D://MIT Research Docs//NYC_LUR_2206//Python Codes//NO2_LGBT_xMedianRStr.csv')
-# no2_ytraintest = pd.read_csv('D://MIT Research Docs//NYC_LUR_2206//Python Codes//NO2_LGBT_yMedianRStr.csv')
+# no2_lgb = joblib.load('...//NO2_LGBT_MedianRStr')
+# no2_xtraintest = pd.read_csv('...//NO2_LGBT_xMedianRStr.csv')
+# no2_ytraintest = pd.read_csv('...//NO2_LGBT_yMedianRStr.csv')
 # no2lur_perf, best_no2rf = nyclu_train(no2_lgb, no2_xtraintest, no2_ytraintest)
-# joblib.dump(best_no2lgb, 'D://MIT Research Docs//NYC_LUR_2206//Python Codes//NO2_BestLGBT_MedianRStr')
+# joblib.dump(best_no2lgb, '...//NO2_BestLGBT_MedianRStr')
 
 
 def nyclu_metpredict(lur_model, prdlu_dir, meteo_dir, plt_id = 0):
@@ -169,13 +169,13 @@ def nyclu_metpredict(lur_model, prdlu_dir, meteo_dir, plt_id = 0):
             brx_lu['Log_PrdNO2'] = log_prd
             brx_lu['Prd_NO2'] = np.exp(log_prd)
             brx_prd = brx_lu[['PM_fall_La','Log_PrdNO2','Prd_NO2']]
-        brx_prd.to_csv('D://MIT Research Docs//NYC_LUR_2206//Python Codes//DailyNO2Predictions_Median//BronxFallGrid_Prd'+str(plt_id)+'_'+row['valid']+'.csv', index=False)
+        brx_prd.to_csv('...//DailyNO2Predictions_Median//BronxFallGrid_Prd'+str(plt_id)+'_'+row['valid']+'.csv', index=False)
         xvardf = xvardf.drop(['tmpf','dwpf','relh','sknt','mslp'], axis=1)
     # return brx_prd
-# best_pmlgb = joblib.load('D://MIT Research Docs//NYC_LUR_2206//Python Codes//PM_BestLGBT_MedianRStr')
+# best_pmlgb = joblib.load('...//PM_BestLGBT_MedianRStr')
 # nyclu_metpredict(best_pmlgb, brx_prdlu, lga_meteo)
 
-# best_no2lgb = joblib.load('D://MIT Research Docs//NYC_LUR_2206//Python Codes//NO2_BestLGBT_MedianRStr')
+# best_no2lgb = joblib.load('...//NO2_BestLGBT_MedianRStr')
 # nyclu_metpredict(best_no2lgb, brx_prdlu, lga_meteo, 1)
 
 def nyclu_nometpred (lur_model, prdlu_dir, plt_id = 0):
@@ -192,10 +192,10 @@ def nyclu_nometpred (lur_model, prdlu_dir, plt_id = 0):
         brx_lu['Log_PrdNO2'] = log_prd
         brx_lu['Prd_NO2'] = np.exp(log_prd)
         brx_prd = brx_lu[['PM_fall_La','Log_PrdNO2','Prd_NO2']]        
-    brx_prd.to_csv('D://MIT Research Docs//NYC_LUR_2206//Python Codes//BronxFallGrid_PrdnoMeteo.csv', index=False)
+    brx_prd.to_csv('...//BronxFallGrid_PrdnoMeteo.csv', index=False)
 
 
-# best_pmlgb = joblib.load('D://MIT Research Docs//NYC_LUR_2206//Python Codes//PM_BestLGBT_Mean')
+# best_pmlgb = joblib.load('...//PM_BestLGBT_Mean')
 # nyclu_nometpred(best_pmlgb, brx_prdlu)
     
 def lur_shapsumm(lur_model, xtraintest):
@@ -203,12 +203,12 @@ def lur_shapsumm(lur_model, xtraintest):
     shap_val = shap_mdl.shap_values(xtraintest)
     shap.summary_plot(shap_val, xtraintest, show=True)
     
-best_pmlgb = joblib.load('D://MIT Research Docs//NYC_LUR_2206//Python Codes//PM_BestLGBT_MedianRStr')
-pm_xtraintest = pd.read_csv('D://MIT Research Docs//NYC_LUR_2206//Python Codes//PM_LGBT_xMedianRStr.csv')
+best_pmlgb = joblib.load('...//PM_BestLGBT_MedianRStr')
+pm_xtraintest = pd.read_csv('...//PM_LGBT_xMedianRStr.csv')
 lur_shapsumm(best_pmlgb, pm_xtraintest)
 
-# best_no2lgb = joblib.load('D://MIT Research Docs//NYC_LUR_2206//Python Codes//NO2_BestLGBT_MedianRStr')
-# no2_xtraintest = pd.read_csv('D://MIT Research Docs//NYC_LUR_2206//Python Codes//NO2_LGBT_xMedianRStr.csv')
+# best_no2lgb = joblib.load('...//NO2_BestLGBT_MedianRStr')
+# no2_xtraintest = pd.read_csv('...//NO2_LGBT_xMedianRStr.csv')
 # lur_shapsumm(best_no2rf, no2_xtraintest)
 
 
@@ -228,7 +228,7 @@ def lur_shapsingle(lur_model, prdlu_dir, meteo_dir):
     shap.force_plot(shap_mdl.expected_value, shap_val[brx_lu['PM_fall_La']==48869,:], xvardf.loc[brx_lu['PM_fall_La']==48869,:], matplotlib=True)
 
 
-# best_pmlgb = joblib.load('D://MIT Research Docs//NYC_LUR_2206//Python Codes//PM_BestLGBT_MedianRStr')
+# best_pmlgb = joblib.load('...//PM_BestLGBT_MedianRStr')
 # lur_shapsingle(best_pmlgb, brx_prdlu, lga_meteo)
 
 
