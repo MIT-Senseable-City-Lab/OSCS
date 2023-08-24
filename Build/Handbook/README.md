@@ -3,3 +3,37 @@
 # Assembly Guide
 
 This assembly guide has step-by-step instructions on how to assemble a Flatburn. Look through the build section on our Github to gather all the required files for building the device. Follow the instructions in this guide (and feel free to customize the device and sensors as you see fit). We hope you have fun assembling your own Flatburn and collecting data about your environment!
+
+
+
+
+# What you need to get started
+- 3D printed and laser-cut parts,
+- Fasteners and tools as specified in the [bill of materials](https://docs.google.com/spreadsheets/d/1-UVIJEneydIf8kLRng4QxvzjM4k2ZoDa/edit?usp=sharing&ouid=118244402021817924300&rtpof=true&sd=true)
+
+<img src="https://github.com/MIT-Senseable-City-Lab/OSCS/blob/main/flatburn-images/Complete flatburn.jpg" width="800px">
+
+
+# Assembly instructions
+1. Slot together two halves of the core module
+
+<img src="https://github.com/MIT-Senseable-City-Lab/OSCS/blob/main/flatburn-images/Flatburn assembly 1.jpg" width="400px">   <img src="https://github.com/MIT-Senseable-City-Lab/OSCS/blob/main/flatburn-images/Flatburn assembly 2.jpg" width="400px">
+
+
+2. Use super-glue to secure the o-rings in the core module (solar-panel recess and base-plate recess) and to the top of the sensor module.
+
+<img src="https://github.com/MIT-Senseable-City-Lab/OSCS/blob/main/flatburn-images/o-ring.jpg" width="400px"> <img src="https://github.com/MIT-Senseable-City-Lab/OSCS/blob/main/flatburn-images/o-ring 3.jpg" width="400px">
+
+<img src="https://github.com/MIT-Senseable-City-Lab/OSCS/blob/main/flatburn-images/o-ring2.jpg" width="400px">
+
+1. Using a soldering iron, add screw inserts to the core module and to the magnet-feet holders; small (M3) and large (¼ “) inserts respectively
+
+<img src="https://github.com/MIT-Senseable-City-Lab/OSCS/blob/main/flatburn-images/with soldering iron.jpg" width="400px">  <img src="https://github.com/MIT-Senseable-City-Lab/OSCS/blob/main/flatburn-images/with_soldering_iron3.jpg" width="400px">
+
+
+<img src="https://github.com/MIT-Senseable-City-Lab/OSCS/blob/main/flatburn-images/with_soldering_iron2.jpg" width="400px">
+
+
+2. Clip ‘in-between plate’ into core module. Feed solar panel cable through slot.
+
+
