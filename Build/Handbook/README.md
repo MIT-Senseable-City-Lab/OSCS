@@ -37,3 +37,10 @@ This assembly guide has step-by-step instructions on how to assemble a Flatburn.
 2. Clip ‘in-between plate’ into core module. Feed solar panel cable through slot.
 
 
+<img src="https://github.com/MIT-Senseable-City-Lab/OSCS/blob/main/flatburn-images/Clip_in_between1.jpg" width="400px">  <img src="https://github.com/MIT-Senseable-City-Lab/OSCS/blob/main/flatburn-images/Clip_in_between2.jpg" width="400px">   <img src="https://github.com/MIT-Senseable-City-Lab/OSCS/blob/main/flatburn-images/Insert_solar.jpg" width="400px">    <img src="https://github.com/MIT-Senseable-City-Lab/OSCS/blob/main/flatburn-images/Insert_solar2.jpg" width="400px">
+
+
+
+3. Screw solar panel onto the core module
+
+<img src="https://github.com/MIT-Senseable-City-Lab/OSCS/blob/main/flatburn-images/Solar_insert.jpg" width="400px">  <img src="https://github.com/MIT-Senseable-City-Lab/OSCS/blob/main/flatburn-images/Screew_solar_panel.jpg" width="400px">
