@@ -43,27 +43,26 @@ This assembly guide has step-by-step instructions on how to assemble a Flatburn.
 
 3. Screw solar panel onto the core module
 
-<img src="https://github.com/MIT-Senseable-City-Lab/OSCS/blob/main/flatburn-images/PCB insert.jpg" width="400px">  <img src="https://github.com/MIT-Senseable-City-Lab/OSCS/blob/main/flatburn-images/Screew_solar_panel.jpg" width="400px">
+<img src="https://github.com/MIT-Senseable-City-Lab/OSCS/blob/main/flatburn-images/Solar_insert.jpg" width="400px">  <img src="https://github.com/MIT-Senseable-City-Lab/OSCS/blob/main/flatburn-images/Screew_solar_panel.jpg" width="400px">
 
 4. Slide the main PCB into the back of the core module; secure with 3D printed clamps.
 
 <img src="https://github.com/MIT-Senseable-City-Lab/OSCS/blob/main/flatburn-images/PCB insert.jpg" width="400px">  <img src="https://github.com/MIT-Senseable-City-Lab/OSCS/blob/main/flatburn-images/Battery_pin.jpg" width="400px">
 
-6. Slide battery into front of the core module
+5. Slide battery into front of the core module
 
-<img src="https://github.com/MIT-Senseable-City-Lab/OSCS/blob/main/flatburn-images/Solar_insert.jpg" width="400px">  <img src="https://github.com/MIT-Senseable-City-Lab/OSCS/blob/main/flatburn-images/Core_module.jpg" width="400px">
+<img src="https://github.com/MIT-Senseable-City-Lab/OSCS/blob/main/flatburn-images/battery.jpg" width="400px">  <img src="https://github.com/MIT-Senseable-City-Lab/OSCS/blob/main/flatburn-images/Core_module.jpg" width="400px">
 
-7. Connect solar panel and battery to the main PCB
+6. Connect solar panel and battery to the main PCB
+   
+<img src="https://github.com/MIT-Senseable-City-Lab/OSCS/blob/main/flatburn-images/Connect_Solar.jpg" width="400px">  <img src="https://github.com/MIT-Senseable-City-Lab/OSCS/blob/main/flatburn-images/connect_battery.jpg" width="400px">
+
+7. Clip the magnet-feet holders into the base-plate
    
 <img src="https://github.com/MIT-Senseable-City-Lab/OSCS/blob/main/flatburn-images/magnet_insert.jpg" width="400px">
 
 
-8. Clip the magnet-feet holders into the base-plate
-   
-<img src="https://github.com/MIT-Senseable-City-Lab/OSCS/blob/main/flatburn-images/Solar_insert.jpg" width="400px">  <img src="https://github.com/MIT-Senseable-City-Lab/OSCS/blob/main/flatburn-images/Screew_solar_panel.jpg" width="400px">
-
-
-10. Feed the sensor-connector-cable through the slot in the base-plate and then secure the plate to the core module\
+8. Feed the sensor-connector-cable through the slot in the base-plate and then secure the plate to the core module\
 
 <img src="https://github.com/MIT-Senseable-City-Lab/OSCS/blob/main/flatburn-images/sensor_cable.jpg" width="400px">  <img src="https://github.com/MIT-Senseable-City-Lab/OSCS/blob/main/flatburn-images/core_module_with_magnet.jpg" width="400px">
 
