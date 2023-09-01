@@ -9,12 +9,9 @@ import os
 
 # Please customize your own file directory here.
 cs_dir = os.path.abspath('D://MIT Research Docs//CityScannerAMS_2210//amsday1//nyc0305//QUEUE')
-headers = ['flagID','deviceID', 'timestamp', 'latitude', 'longitude', 'PM1', 'PM25', 'PM10',\
-    'bin0', 'bin1', 'bin2', 'bin3', 'bin4', 'bin5', 'bin6', 'bin7', 'bin8', 'bin9',\
-    'bin10', 'bin11', 'bin12', 'bin13', 'bin14', 'bin15', 'bin16', 'bin17', 'bin18',\
-    'bin19', 'bin20', 'bin21', 'bin22', 'bin23', 'flowrate', 'countglitch', 'laser_status',\
-    'temperature_opc', 'humidity_opc', 'data_is_valid', 'temperature', 'humidity',\
-    'ambient_IR', 'object_IR', 'gas_op1_w', 'gas_op1_r', 'gas_op2_w', 'gas_op2_r', 'noise']
+headers = ['flagID','deviceID', 'timestamp', 'latitude', 'longitude', 'PM1', 'PM25', 'PM4','PM10',\
+    'numPM0', 'numPM1', 'numPM2', 'numPM4', 'numPM10', 'PartSize','temperature', 'humidity',\
+    'gas_op1_w', 'gas_op1_r', 'gas_op2_w', 'gas_op2_r', 'noise']
 cs_df = pd.DataFrame()
 for root, dirs, files in os.walk(cs_dir):
     for file in files:
