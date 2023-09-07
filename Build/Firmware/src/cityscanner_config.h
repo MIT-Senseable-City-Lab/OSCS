@@ -13,7 +13,7 @@
 
 #define OPC_ENABLED FALSE           //For Stockholm (Turn off) 
 #define IR_ENABLED TRUE
-#define CELLULAR_ON_STARTUP FALSE    // TRUE or FALSE
+#define CELLULAR_ON_STARTUP TRUE    // TRUE or FALSE
 #define DTIME 100 
 
 #define HARVARD_PILOT FALSE         //Is this an Harvard pilot device?
@@ -33,8 +33,7 @@
 #define RECORDS_PER_FILE 200 //standard is 200
 #define LOW_BATTERY_THRESHOLD 3.80 //volt
 
-//#define TCP_ENDPOINT "54.224.77.206" //MIT BACKEND
-#define TCP_ENDPOINT "3.236.127.62" //MIT BACKEND
+#define TCP_ENDPOINT "127.0.0.1" //change the IP address to dump data over TCP
 
 #define NYC 11951
 #define STOCKHOLM 11375
