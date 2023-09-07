@@ -171,9 +171,8 @@ void Cityscanner::loop()
     else
     {
 
-      data_payload = String::format("%s,%s,%s,%s,%s", sense.getOPCdata(OPC_DATA_VERSION).c_str(), sense.getTEMPdata().c_str(), sense.getGASdata().c_str(), sense.getNOISEdata().c_str(), sense.getIRdata90640().c_str());  //Temp,Gas,Noise,Thermal
-      //data_payload = String::format("%s", sense.getIRdata90640().c_str());  //Temp,Gas,Noise,Thermal
-      //data_payload = String::format("%s,%s,%s,%s", sense.getOPCdata(OPC_DATA_VERSION).c_str(), sense.getTEMPdata().c_str(), sense.getGASdata().c_str(), sense.getNOISEdata().c_str());  //Temp,Gas,Noise
+      //data_payload = String::format("%s,%s,%s,%s,%s", sense.getOPCdata(OPC_DATA_VERSION).c_str(), sense.getTEMPdata().c_str(), sense.getGASdata().c_str(), sense.getNOISEdata().c_str(), sense.getIRdata90640().c_str());  //Temp,Gas,Noise,Thermal
+      data_payload = String::format("%s,%s,%s,%s", sense.getOPCdata(OPC_DATA_VERSION).c_str(), sense.getTEMPdata().c_str(), sense.getGASdata().c_str(), sense.getNOISEdata().c_str());  //Temp,Gas,Noise
                                                                                                                                  
       // data_payload = String::format("%s,%s", sense.getOPCdata(OPC_DATA_VERSION).c_str(), sense.getNOISEdata().c_str());            //TBC
     }
