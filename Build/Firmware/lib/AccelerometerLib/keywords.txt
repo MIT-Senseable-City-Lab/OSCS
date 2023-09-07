@@ -1,0 +1,32 @@
+https://github.com/arduino/Arduino/wiki/Arduino-IDE-1.5:-Library-specification
+
+#######################################
+# Syntax Coloring Map For ExampleLibrary
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+KXTJ3	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+begin	KEYWORD2
+readRegister	KEYWORD2
+readRegisterInt16	KEYWORD2
+intConf	KEYWORD2
+axisAccel	KEYWORD2
+standby	KEYWORD2
+
+#######################################
+# Instances (KEYWORD2)
+#######################################
+
+KXTJ3 KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
