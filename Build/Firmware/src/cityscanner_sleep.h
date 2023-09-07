@@ -1,5 +1,5 @@
 #pragma once
-#include "cityscanner_CONFIG.h"
+#include "cityscanner_config.h"
 #include "cityscanner_store.h"
 #include "cityscanner_sense.h"
 #include "cityscanner_vitals.h"

@@ -42,8 +42,7 @@ void CitySleep::stop(){
     SystemSleepConfiguration config;
     config.mode(SystemSleepMode::STOP)
         .duration(std::chrono::hours(12))
-        //.gpio(WKP,CHANGE)
-        .gpio(INT_ACC, CHANGE)
+        .gpio(WKP,CHANGE)
         .network(NETWORK_INTERFACE_CELLULAR, SystemSleepNetworkFlag::INACTIVE_STANDBY);
     System.sleep(config);
     if(Cityscanner::instance().debug_mode){
@@ -64,8 +63,8 @@ void CitySleep::stop(){
     delay(1s);
     core.enable5V(TRUE);
     delay(1s);
-    if(OPC_ENABLED)
-        sense.startOPC();
+    //if(OPC_ENABLED)
+      //  sense.startOPC();
 }
 
 void CitySleep::hibernate(uint8_t duration, uint8_t type){

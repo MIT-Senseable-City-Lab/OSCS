@@ -38,10 +38,14 @@ class CitySense {
         bool stopGAS(void);
         bool GAS_started = false;
         String getGASdata(void);
-        bool startIR(void);
-        bool stopIR(void);
-        bool IR_started = false;
+        //bool startIR(void);
+        //bool stopIR(void);
+        //bool IR_started = false;
         String getIRdata(void);
+        bool startIR90640(void);
+        bool stopIR90640(void);
+        bool IR90640_started = false;
+        String getIRdata90640(void);
 
 
     

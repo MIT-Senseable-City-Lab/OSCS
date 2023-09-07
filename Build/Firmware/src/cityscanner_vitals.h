@@ -1,7 +1,7 @@
 #pragma once
-#include "cityscanner_CONFIG.h"
+#include "cityscanner_config.h"
 #include "Particle.h"
-#include "SparkFun_SHTC3.h" 
+#include "SparkFun_SHTC3.h"
 
 
 class CityVitals {

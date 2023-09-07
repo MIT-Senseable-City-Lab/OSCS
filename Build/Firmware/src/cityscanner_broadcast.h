@@ -1,5 +1,5 @@
 #pragma once
-#include "cityscanner_CONFIG.h"
+#include "cityscanner_config.h"
 
 
 class CityBroadcast {

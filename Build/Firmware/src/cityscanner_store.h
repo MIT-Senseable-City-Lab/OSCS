@@ -1,7 +1,8 @@
 #pragma once
-#include "cityscanner_CONFIG.h"
+#include "cityscanner_config.h"
 #include "SD.h"
 #include "SPI.h"
+#include "TinyGPS++.h"
 #include "location_service.h"
 #define ALL_FILES -1
 

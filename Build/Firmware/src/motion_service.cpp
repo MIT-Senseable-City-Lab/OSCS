@@ -60,7 +60,7 @@ int MotionService::start()
             Serial.print("IMU initialized.\n");
         }
 
-        myIMU.intConf(123, 1, 10, LOW);         // Need to adjust threshold value here
+        myIMU.intConf(50, 1, 10, LOW);         // Need to adjust threshold value here
 
         uint8_t readData = 0;
 

@@ -1,9 +1,11 @@
 #include "Particle.h"
 
-#include "cityscanner_CONFIG.h"
+#include "cityscanner_config.h"
 #include "cityscanner.h"
 #include "CS_core.h"
 
+//PRODUCT_ID(PILOT_CITY); 
+//PRODUCT_VERSION(PILOT_CITY_VERSION);
 
 
 SYSTEM_THREAD(ENABLED);

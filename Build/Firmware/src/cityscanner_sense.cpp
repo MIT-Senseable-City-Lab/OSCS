@@ -1,3 +1,4 @@
+#include "Particle.h"
 #include "cityscanner_sense.h"
 #include "CS_core.h"
 #include <SensirionI2CSen5x.h>
@@ -5,7 +6,7 @@
 #include "BME280.h"
 //#include "Adafruit_ADS1015.h"
 #include "DFRobot_SHT20.h"
-#include "Adafruit_MLX90614.h"
+#include <Adafruit_MLX90640.h>
 #include "sps30.h"
 #include <i2c_adc_ads7828.h>
 
@@ -22,7 +23,9 @@ struct sps_values val;
 //Adafruit_ADS1115 gas;  
 BME280 tempext;
 DFRobot_SHT20 sht20;
-Adafruit_MLX90614 mlx1 = Adafruit_MLX90614(); 
+//Adafruit_MLX90614 mlx1 = Adafruit_MLX90614(); 
+Adafruit_MLX90640 mlx;
+//float frame[32*24];
 
 // device 0
 // Address: A1=0, A0=0
@@ -51,7 +54,7 @@ int CitySense::init()
     if(!OPC_started && OPC_ENABLED)
         startOPC();
     delay(DTIME);
-    startIR();
+    startIR90640();
     return 1;
 }
 
@@ -74,7 +77,7 @@ int CitySense::stop_all()
 
 bool CitySense::startOPC()
 {
-    //CS_core::instance().enableOPC(1);
+    CS_core::instance().enableOPC(1);
     //myOPCN3.initialize();
     if (!sps30.begin(SP30_COMMS))
       Serial.println("could not initialize communication channel.");
@@ -90,75 +93,120 @@ bool CitySense::startOPC()
         return 1;
     }
 
-    /*Wire.begin();
-    sen5x.begin(Wire);
-
-    uint16_t error;
-    char errorMessage[256];
-    error = sen5x.deviceReset();
-    if (error) {
-        Serial.print("Error trying to execute deviceReset(): ");
-        errorToString(error, errorMessage, 256);
-        Serial.println(errorMessage);
-        OPC_started = false;
-        return 0;
-    }
-
-    float tempOffset = 0.0;
-    error = sen5x.setTemperatureOffsetSimple(tempOffset);
-    if (error) {
-        Serial.print("Error trying to execute setTemperatureOffsetSimple(): ");
-        errorToString(error, errorMessage, 256);
-        Serial.println(errorMessage);
-        OPC_started = false;
-        return 0;
-    } else {
-        Serial.print("Temperature Offset set to ");
-        Serial.print(tempOffset);
-        Serial.println(" deg. Celsius (SEN54/SEN55 only");
-    }
-
-    // Start Measurement
-    error = sen5x.startMeasurement();
-    if (error) {
-        Serial.print("Error trying to execute startMeasurement(): ");
-        errorToString(error, errorMessage, 256);
-        Serial.println(errorMessage);
-        OPC_started = false;
-        return 0;
-    } else {
-        Serial.println(F("Initialized SEN55."));
-        OPC_started = true;
-        return 1;
-    }*/
 }
 
-bool CitySense::startIR(){
-    mlx1.begin();
-    IR_started = true;
+bool CitySense::startIR90640()
+{
+    WITH_LOCK(Wire) {
+        if (!mlx.begin(MLX90640_I2CADDR_DEFAULT, &Wire))
+        {
+            Serial.println("MLX90640 not found!");
+            //while(1) 
+                delay(10);   
+            return false; // MLX90640 not found, return false
+        }
+            Serial.println("Found Adafruit MLX90640");
+
+            Serial.print("Serial number: ");
+            Serial.print(mlx.serialNumber[0], HEX);
+            Serial.print(mlx.serialNumber[1], HEX);
+            Serial.println(mlx.serialNumber[2], HEX);
+    
+            mlx.setMode(MLX90640_CHESS);
+            Serial.print("Current mode: ");
+            if (mlx.getMode() == MLX90640_CHESS) {
+            Serial.println("Chess");
+        } else {
+            Serial.println("Interleave");    
+        }
+        
+        mlx.setResolution(MLX90640_ADC_18BIT);
+        Serial.print("Current resolution: ");
+        mlx90640_resolution_t res = mlx.getResolution();
+        switch (res) {
+            case MLX90640_ADC_16BIT: Serial.println("16 bit"); break;
+            case MLX90640_ADC_17BIT: Serial.println("17 bit"); break;
+            case MLX90640_ADC_18BIT: Serial.println("18 bit"); break;
+            case MLX90640_ADC_19BIT: Serial.println("19 bit"); break;
+        }
+
+
+        mlx.setRefreshRate(MLX90640_2_HZ);
+        Serial.print("Current frame rate: ");
+        mlx90640_refreshrate_t rate = mlx.getRefreshRate();
+        switch (rate) {
+            case MLX90640_0_5_HZ: Serial.println("0.5 Hz"); break;
+            case MLX90640_1_HZ: Serial.println("1 Hz"); break; 
+            case MLX90640_2_HZ: Serial.println("2 Hz"); break;
+            case MLX90640_4_HZ: Serial.println("4 Hz"); break;
+            case MLX90640_8_HZ: Serial.println("8 Hz"); break;
+            case MLX90640_16_HZ: Serial.println("16 Hz"); break;
+            case MLX90640_32_HZ: Serial.println("32 Hz"); break;
+            case MLX90640_64_HZ: Serial.println("64 Hz"); break;
+        }
+    }
+    
+    IR90640_started = true;
+    return true; // MLX90640 found, return true
+}
+
+
+bool CitySense::stopIR90640()
+{
+    IR90640_started = false;
     return 1;
 }
+String CitySense::getIRdata90640()
+{
+    if (IR90640_started)
+{
+    float t;
+    float frame[32 * 24];
+    String payloadformat;
+    String IRpayload;
 
-bool CitySense::stopIR(){
-    IR_started = false;
-    return 1;
-}
+    // Add delay before reading the frame
+    delay(500);
 
-String CitySense::getIRdata(){
-    if(IR_started)
+    WITH_LOCK(Wire) {
+        if (mlx.getFrame(frame) != 0)
+        {
+            Serial.println("no IR Data");
+            //return;
+        }
+    }
+    
+
+    for (uint8_t h = 0; h < 24; h++)
     {
-        //mlx.begin(); 
-        return String::format("%.1f,%.1f", mlx1.readAmbientTempC(), mlx1.readObjectTempC());
-        /*double (Adafruit_MLX90614::)() ATC, OTC, ATF, OTF;
-        ATC = mlx.readAmbientTempC;
-        OTC = mlx.readObjectTempC;
-        ATF = mlx.readAmbientTempF;
-        OTF = mlx.readObjectTempF;
-        return String::format("%.3f", "%.3f", "%.3f", "%.3f",ATC, OTC, ATF, OTF); */
-    }
-    else 
-    return "na,na";
+        if (h < 23)
+        {
+            for (uint8_t w = 0; w < 32; w++)
+            {
+                payloadformat += "%.1f,";
+                t = frame[h * 32 + w];
+                IRpayload += String::format("%.2f", t) + ",";
+            }
+        }
+        else
+        {
+            for (uint8_t w = 0; w < 31; w++)
+            {
+                payloadformat += "%.1f,";
+                t = frame[h * 32 + w];
+                IRpayload += String::format("%.2f", t) + ",";
+            }
+            IRpayload += String::format("%.2f", t);
+        }
+    } 
+    // Serial.println(IRpayload);
+    return IRpayload;
 }
+else
+    return "na,na";
+    
+}
+
 
 bool CitySense::stopOPC()
 {

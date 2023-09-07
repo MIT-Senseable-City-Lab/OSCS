@@ -4,6 +4,7 @@
 #include "CS_core.h"
 #include "TimeLib.h"
 #include "LegacyAdapter.h"
+#include <Wire.h>
 
 LocationService *LocationService::_instance = nullptr;
 AssetTracker gps;
@@ -15,6 +16,7 @@ LocationService::LocationService() {
 int LocationService::start()
 {
     if(!location_started){
+
     CS_core::instance().enableGPS(1);
     CS_core::instance().activateGPS(1);
     gps.withI2C();
@@ -69,29 +71,13 @@ String LocationService::getEpochTime(void)
     if (location_started) 
     { 
         gpsTime.Year = y2kYearToTm(gps.getYear());
-        //gpsTime.Year = tmYearToCalendar(y2kYearToTm(gps.getYear()));
         gpsTime.Month = gps.getMonth();
         gpsTime.Day = gps.getDay();
         gpsTime.Hour = gps.getHour();
         gpsTime.Minute = gps.getMinute();
         gpsTime.Second = gps.getSeconds();
 
-        /*Serial.print(tmYearToCalendar(y2kYearToTm(gps.getYear())));
-        Serial.print(", ");
-        Serial.print(gpsTime.Year);
-        Serial.print(", ");
-        Serial.print(gpsTime.Month);
-        Serial.print(", ");
-        Serial.print(gpsTime.Day);
-        Serial.print(", ");
-        Serial.print(gpsTime.Hour);
-        Serial.print(", ");
-        Serial.print(gpsTime.Minute);
-        Serial.print(", ");
-        Serial.println(gpsTime.Second);*/
-
         EpochTime = makeTime(gpsTime);
-        //Serial.println(EpochTime);
         itoa(EpochTime, sEpochTime, 10);
 
         return sEpochTime;
